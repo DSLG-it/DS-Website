@@ -81,11 +81,9 @@ nav a:hover {
 
 /* ===== Hero ===== */
 .hero {
+  position: relative;
   height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-              url('images/ss01.png');
-  background-size: cover;
-  background-position: center;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -93,10 +91,64 @@ nav a:hover {
   color: white;
 }
 
+/* layer รูป */
+.hero-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.hero-bg span {
+  position: absolute;
+  inset: 0;
+  
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  animation: fade 25s infinite;
+}
+
+/* delay แต่ละรูป */
+.hero-bg span:nth-child(1) { animation-delay: 0s; }
+.hero-bg span:nth-child(2) { animation-delay: 5s; }
+.hero-bg span:nth-child(3) { animation-delay: 10s; }
+.hero-bg span:nth-child(4) { animation-delay: 15s; }
+.hero-bg span:nth-child(5) { animation-delay: 20s; }
+
+/* effect ละลาย */
+@keyframes fade {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* overlay ดำ */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.7);
+}
+
+/* content อยู่ด้านบน */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
 .hero-content h1 {
   font-size: 52px;
   margin-bottom: 15px;
-  color: #ff7a00; /* ส้มเด่น */
+  color: #ff7a00;
 }
 
 .hero-content p {
@@ -190,30 +242,30 @@ section h2 {
   justify-content: center;
   gap: 50px;
   padding: 80px 10%;
-  flex-wrap: wrap; /* สำคัญ: เพื่อให้รูปตกลงมาข้างล่างเมื่อพื้นที่ไม่พอ */
+  flex-wrap: wrap;
 }
 
 #contact .text {
   flex: 1;
-  min-width: 300px; /* ป้องกันข้อความบีบตัวเกินไป */
+  min-width: 300px;
   text-align: left;
 }
 
 .contact-qr-group {
   flex: 0 0 auto;
-  text-align: center; /* ให้รูปอยู่กลางบล็อกของตัวเอง */
+  text-align: center; /* รูปอยู่กลางบล็อกตัวเอง */
 }
 
 .contact-qr-img {
-  max-width: 250px; /* ขนาดในคอมตามที่คุณต้องการ */
-  width: 100%;     /* เพื่อให้หดตัวได้ตามหน้าจอมือถือ */
+  max-width: 250px; /* ขนาดในคอม */
+  width: 100%;     /* ให้หดตัวได้ตามจอมือถือ */
   height: auto;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   border: 2px solid #ff7a00;
 }
 
-/* ===== Story (Grid 2x2 พร้อม Hover Effect) ===== */
+/* ===== Story (Grid 2x2 Hover Effect) ===== */
 #story.split {
   display: flex;
   align-items: center;
@@ -223,7 +275,7 @@ section h2 {
 }
 
 #story .image {
-  flex: 0 0 500px; /* ขนาดใหญ่ขึ้นตามที่ต้องการ */
+  flex: 0 0 500px;
   max-width: 100%;
 }
 
@@ -235,7 +287,7 @@ section h2 {
 
 .story-grid img {
   width: 100%;
-  height: 200px; /* เพิ่มความสูงอีกนิดให้ดูใหญ่ขึ้น */
+  height: 200px;
   object-fit: cover;
   border-radius: 20px;
   transition: all 0.3s ease;
@@ -243,11 +295,11 @@ section h2 {
 }
 
 .story-grid img:hover {
-  transform: translateY(-10px) scale(1.05); /* เด้งนิดๆ */
+  transform: translateY(-10px) scale(1.05); /* เด้ง ๆ */
   box-shadow: 0 15px 35px rgba(255,122,0,0.3);
 }
 
-/* ===== Responsive จัดการทุกส่วนไม่ให้ล้น ===== */
+/* ===== Responsive จัดทุกส่วนไม่ให้ล้น ===== */
 @media (max-width: 768px) {
   /* Contact: ข้อความบน รูปขยับมาล่างกลาง */
   #contact {
@@ -262,10 +314,10 @@ section h2 {
   }
 
   .contact-qr-img {
-    max-width: 200px; /* ในมือถือให้เล็กลงอีกนิดเพื่อความพอดี */
+    max-width: 200px;
   }
 
-  /* Story: เรียงเป็นแนวตั้ง */
+  /* Story: เรียงแนวตั้ง */
   #story.split {
     flex-direction: column;
     text-align: center;
@@ -277,7 +329,7 @@ section h2 {
   }
 
   .story-grid img {
-    height: 150px; /* ในมือถือลดความสูงลงเพื่อให้เห็นครบ 4 รูปในหน้าเดียว */
+    height: 150px;
   }
 }
 
@@ -410,7 +462,7 @@ p {
 
 /* แต่ละรูป */
 .slide {
-  min-width: 100%;   /* 👈 สำคัญมาก */
+  min-width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -465,7 +517,7 @@ p {
     cursor: pointer;
   }
 
-  /* เมนูฝั่งขวา */
+  /* เมนูขวา */
   .nav-links {
     position: fixed;
     top: 0;
@@ -492,76 +544,76 @@ p {
   }
 }
 
-/* จัดการกลุ่มชื่อบริษัท */
+/* ชื่อบริษัท */
 .logo-group {
   display: flex;
-  flex-direction: column; /* บังคับให้ h2 กับ h4 เรียงจากบนลงล่าง */
+  flex-direction: column;
   justify-content: center;
 }
 
-/* ปรับขนาด h4 ให้ดูเป็นชื่อรองที่สวยงาม */
+
 nav h4 {
-  font-size: 0.85rem; /* ขนาดเล็กลงหน่อย */
-  color: #5d2e00;     /* สีน้ำตาลเข้มเข้ากับธีมส้ม */
+  font-size: 0.85rem;
+  color: #5d2e00;
   font-weight: 500;
-  margin-top: 0px;   /* ขยับขึ้นไปชิด h2 อีกนิด */
+  margin-top: 0px;
 }
 
 /* ===== Map Section ===== */
 #map-section {
-  background: #fff; /* พื้นหลังสีขาวตัดกับส่วนข้างบน */
+  background: #fff;
   padding: 80px 10%;
 }
 
 .map-container {
   width: 100%;
   border-radius: 20px;
-  overflow: hidden; /* เพื่อให้ขอบของแผนที่มนตาม border-radius */
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  border: 5px solid #ff7a00; /* เพิ่มขอบสีส้มให้เข้ากับธีม */
+  border: 5px solid #ff7a00; /* ขอบส้ม */
 }
 
 .map-container iframe {
   display: block;
 }
 
-/* ปรับระยะห่างของหัวข้อในหน้าแผนที่ */
+/* ระยะห่างหัวข้อ หน้าแผนที่ */
 #map-section h2 {
   margin-bottom: 40px;
 }
 
 /* ===== Contact QR Code ===== */
 .contact-qr-group {
-  margin-top: 25px; /* ระยะห่างจากบรรทัดที่อยู่ */
-  text-align: left;  /* จัดรูปภาพชิดซ้ายให้ตรงกับข้อความ */
+  margin-top: 25px;
+  text-align: left;
 }
 
 .contact-qr-img {
-  max-width: 250px; /* จำกัดความกว้างรวมของทั้งสองรูป (เพื่อให้ดูเล็กแต่สแกนได้) */
-  height: auto;     /* ปรับความสูงตามอัตราส่วนภาพ */
-  border-radius: 10px; /* ทำให้ขอบรูปมนเล็กน้อยให้เข้ากับธีม */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* ใส่เงาบางๆ เพื่อให้รูปดูมีมิติ */
-  border: 2px solid #ff7a00; /* เพิ่มขอบสีส้มบางๆ เพื่อให้เด่นขึ้น */
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* เงา*/
+  border: 2px solid #ff7a00; /* ขอบส้ม */
 }
 
-/* ปรับระยะห่างของส่วน Contact เพิ่มเติมเพื่อให้ดูไม่แน่นเกินไป */
+/* ระยะห่างส่วน Contact */
 #contact {
-  display: flex; /* หากยังไม่ใช้ Flex ให้ใส่เพื่อจัดวาง text และ image */
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 50px;
   padding: 100px 10%;
 }
 
-/* ปรับขนาดแผนที่ให้เล็กแบบที่คุุณต้องการ (ถ้าอยากให้เป็นสไตล์เดิม) */
+/* ขนาดแผนที่ */
 #contact .image img {
-  width: 150px !important; /* บังคับขนาดให้เล็ก */
+  width: 150px !important;
   height: 150px;
-  border-radius: 50%; /* ทำเป็นรูปวงกลม (ถ้าต้องการ) */
+  border-radius: 50%;
   object-fit: cover;
 }
 
-/* จัดการ Layout ของเซกชัน Story */
+/* จัดการ Layout Story */
 #story.split {
   display: flex;
   align-items: center;
@@ -574,9 +626,9 @@ nav h4 {
   flex: 1;
 }
 
-/* บล็อกรูปฝั่งขวา (ปรับให้ใหญ่ขึ้นจากเดิม) */
+/* บล็อกรูปฝั่งขวา */
 #story .image {
-  flex: 0 0 500px; /* เพิ่มขนาดความกว้างเป็น 500px เพื่อให้ภาพดูชัดเจนขึ้น */
+  flex: 0 0 500px;
   max-width: 100%;
 }
 
@@ -589,22 +641,22 @@ nav h4 {
 
 .story-grid img {
   width: 100%;
-  height: 180px; /* ปรับความสูงต่อรูปให้สมดุลกับความกว้างใหม่ */
+  height: 180px;
   object-fit: cover;
-  border-radius: 20px; /* ขอบมนสวยงาม */
+  border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
   display: block;
-  transition: all 0.3s ease; /* เตรียมไว้สำหรับการเด้ง */
+  transition: all 0.3s ease; /* เด้ง */
   cursor: pointer;
 }
 
-/* เอฟเฟกต์ชี้แล้วเด้งนิดๆ (Hover Effect) */
+/* เอฟเฟกต์ชี้แล้วเด้ง */
 .story-grid img:hover {
-  transform: translateY(-10px) scale(1.05); /* เด้งขึ้นบนและขยายขนาดนิดหน่อย */
-  box-shadow: 0 15px 35px rgba(255,122,0,0.3); /* เพิ่มเงาสีส้มจางๆ ให้ดูเด่น */
+  transform: translateY(-10px) scale(1.05); /* เด้งขึ้นบน ขยายขนาดนิดหน่อย */
+  box-shadow: 0 15px 35px rgba(255,122,0,0.3); /* เงาสีส้ม */
 }
 
-/* สำหรับมือถือ ให้แสดงเรียงเป็นแนวตั้ง */
+/* สำหรับมือถือ แสดงเรียงเป็นแนวตั้ง */
 @media (max-width: 768px) {
   #story.split {
     flex-direction: column;
