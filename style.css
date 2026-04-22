@@ -79,6 +79,38 @@ nav a:hover {
   color: #8B4500;
 }
 
+.logo-group {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo-img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  flex-shrink: 0;
+}
+
+.logo-group h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #8B4500;
+}
+
+.logo-group h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #8B4500;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
 /* ===== Hero ===== */
 .hero {
   position: relative;
@@ -136,7 +168,7 @@ nav a:hover {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.5);
 }
 
 /* content อยู่ด้านบน */
@@ -542,21 +574,6 @@ p {
     color: white;
     font-size: 18px;
   }
-}
-
-/* ชื่อบริษัท */
-.logo-group {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-nav h4 {
-  font-size: 0.85rem;
-  color: #5d2e00;
-  font-weight: 500;
-  margin-top: 0px;
 }
 
 /* ===== Map Section ===== */
