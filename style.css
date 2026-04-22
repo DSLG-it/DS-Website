@@ -1,0 +1,619 @@
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Body ===== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+/* ===== Side Navigation ===== */
+.side-nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.side-nav .dot {
+  width: 12px;
+  height: 12px;
+  background: #ccc;
+  border-radius: 50%;
+  transition: 0.3s;
+  display: block;
+}
+
+.side-nav .dot:hover {
+  background: #ff7a00;
+  transform: scale(1.3);
+}
+
+.side-nav .dot.active {
+  background: linear-gradient(45deg, #ff7a00, #d4af37);
+  transform: scale(1.4);
+  box-shadow: 0 0 10px rgba(255,122,0,0.7);
+}
+
+/* ===== Navbar ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 50px;
+  background: #ff7a00; /* ดำตัดส้ม */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav h2 {
+  color: #8B4500;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #8B4500;
+}
+
+/* ===== Hero ===== */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+              url('images/ss01.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+  color: #ff7a00; /* ส้มเด่น */
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+/* ===== Button ===== */
+button {
+  background: linear-gradient(45deg, #ff7a00, #ffb347);
+  border: none;
+  padding: 14px 35px;
+  color: white;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px rgba(255,122,0,0.4);
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255,122,0,0.6);
+}
+
+/* ===== Section ===== */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ff7a00;
+}
+
+/* ===== About ===== */
+#about {
+  background: #fff7f0; /* ส้มอ่อน */
+}
+
+/* ===== Cards ===== */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 35px;
+  width: 260px;
+  border-radius: 15px;
+  border-top: 5px solid #ff7a00;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255,122,0,0.3);
+}
+
+/* ===== Process ===== */
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.steps div {
+  background: linear-gradient(45deg, #ff7a00, #d4af37);
+  color: white;
+  padding: 25px;
+  border-radius: 12px;
+  font-weight: bold;
+  min-width: 160px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== Contact (Desktop: ซ้าย-ขวา / Mobile: บน-ล่าง) ===== */
+#contact {
+  background: #FFD79F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 80px 10%;
+  flex-wrap: wrap; /* สำคัญ: เพื่อให้รูปตกลงมาข้างล่างเมื่อพื้นที่ไม่พอ */
+}
+
+#contact .text {
+  flex: 1;
+  min-width: 300px; /* ป้องกันข้อความบีบตัวเกินไป */
+  text-align: left;
+}
+
+.contact-qr-group {
+  flex: 0 0 auto;
+  text-align: center; /* ให้รูปอยู่กลางบล็อกของตัวเอง */
+}
+
+.contact-qr-img {
+  max-width: 250px; /* ขนาดในคอมตามที่คุณต้องการ */
+  width: 100%;     /* เพื่อให้หดตัวได้ตามหน้าจอมือถือ */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border: 2px solid #ff7a00;
+}
+
+/* ===== Story (Grid 2x2 พร้อม Hover Effect) ===== */
+#story.split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 80px 10%;
+}
+
+#story .image {
+  flex: 0 0 500px; /* ขนาดใหญ่ขึ้นตามที่ต้องการ */
+  max-width: 100%;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.story-grid img {
+  width: 100%;
+  height: 200px; /* เพิ่มความสูงอีกนิดให้ดูใหญ่ขึ้น */
+  object-fit: cover;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.story-grid img:hover {
+  transform: translateY(-10px) scale(1.05); /* เด้งนิดๆ */
+  box-shadow: 0 15px 35px rgba(255,122,0,0.3);
+}
+
+/* ===== Responsive จัดการทุกส่วนไม่ให้ล้น ===== */
+@media (max-width: 768px) {
+  /* Contact: ข้อความบน รูปขยับมาล่างกลาง */
+  #contact {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 20px;
+  }
+
+  #contact .text {
+    text-align: center;
+    min-width: 100%;
+  }
+
+  .contact-qr-img {
+    max-width: 200px; /* ในมือถือให้เล็กลงอีกนิดเพื่อความพอดี */
+  }
+
+  /* Story: เรียงเป็นแนวตั้ง */
+  #story.split {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #story .image {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .story-grid img {
+    height: 150px; /* ในมือถือลดความสูงลงเพื่อให้เห็นครบ 4 รูปในหน้าเดียว */
+  }
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #ff7a00;
+  color: #8B4500;
+  padding: 20px;
+  text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .steps {
+    flex-direction: column;
+  }
+}
+
+/* ===== Split Layout ===== */
+.split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 80px 10%;
+}
+
+.split .text {
+  flex: 1;
+  text-align: left;
+}
+
+.split .image {
+  flex: 1;
+}
+
+.split img {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+/* สลับด้าน */
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* ===== Card Image ===== */
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* ===== Section spacing upgrade ===== */
+section {
+  padding: 100px 20px;
+}
+
+/* ===== Title luxury ===== */
+section h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #ff7a00;
+}
+
+/* ===== Text spacing ===== */
+p {
+  line-height: 1.7;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .split {
+    flex-direction: column;
+  }
+
+  .reverse {
+    flex-direction: column;
+  }
+
+  .split .text {
+    text-align: center;
+  }
+}
+
+/* ===== Slider Container ===== */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 400px; /* สูงแบบดูโปร */
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* ===== Slider ===== */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+/* wrapper */
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+/* แต่ละรูป */
+.slide {
+  min-width: 100%;   /* 👈 สำคัญมาก */
+  height: 100%;
+  object-fit: cover;
+}
+
+/* dots */
+.dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: linear-gradient(45deg, #ff7a00, #d4af37);
+  transform: scale(1.3);
+}
+
+/* ===== Mobile layout ===== */
+/* ===== Overlay ===== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  z-index: 998;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+    font-size: 28px;
+    color: #ff7a00;
+    cursor: pointer;
+  }
+
+  /* เมนูฝั่งขวา */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -250px; /* ซ่อน */
+    width: 250px;
+    height: 100%;
+    background: #111;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  /* ตอนเปิด */
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    color: white;
+    font-size: 18px;
+  }
+}
+
+/* จัดการกลุ่มชื่อบริษัท */
+.logo-group {
+  display: flex;
+  flex-direction: column; /* บังคับให้ h2 กับ h4 เรียงจากบนลงล่าง */
+  justify-content: center;
+}
+
+/* ปรับขนาด h4 ให้ดูเป็นชื่อรองที่สวยงาม */
+nav h4 {
+  font-size: 0.85rem; /* ขนาดเล็กลงหน่อย */
+  color: #5d2e00;     /* สีน้ำตาลเข้มเข้ากับธีมส้ม */
+  font-weight: 500;
+  margin-top: 0px;   /* ขยับขึ้นไปชิด h2 อีกนิด */
+}
+
+/* ===== Map Section ===== */
+#map-section {
+  background: #fff; /* พื้นหลังสีขาวตัดกับส่วนข้างบน */
+  padding: 80px 10%;
+}
+
+.map-container {
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden; /* เพื่อให้ขอบของแผนที่มนตาม border-radius */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 5px solid #ff7a00; /* เพิ่มขอบสีส้มให้เข้ากับธีม */
+}
+
+.map-container iframe {
+  display: block;
+}
+
+/* ปรับระยะห่างของหัวข้อในหน้าแผนที่ */
+#map-section h2 {
+  margin-bottom: 40px;
+}
+
+/* ===== Contact QR Code ===== */
+.contact-qr-group {
+  margin-top: 25px; /* ระยะห่างจากบรรทัดที่อยู่ */
+  text-align: left;  /* จัดรูปภาพชิดซ้ายให้ตรงกับข้อความ */
+}
+
+.contact-qr-img {
+  max-width: 250px; /* จำกัดความกว้างรวมของทั้งสองรูป (เพื่อให้ดูเล็กแต่สแกนได้) */
+  height: auto;     /* ปรับความสูงตามอัตราส่วนภาพ */
+  border-radius: 10px; /* ทำให้ขอบรูปมนเล็กน้อยให้เข้ากับธีม */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* ใส่เงาบางๆ เพื่อให้รูปดูมีมิติ */
+  border: 2px solid #ff7a00; /* เพิ่มขอบสีส้มบางๆ เพื่อให้เด่นขึ้น */
+}
+
+/* ปรับระยะห่างของส่วน Contact เพิ่มเติมเพื่อให้ดูไม่แน่นเกินไป */
+#contact {
+  display: flex; /* หากยังไม่ใช้ Flex ให้ใส่เพื่อจัดวาง text และ image */
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 100px 10%;
+}
+
+/* ปรับขนาดแผนที่ให้เล็กแบบที่คุุณต้องการ (ถ้าอยากให้เป็นสไตล์เดิม) */
+#contact .image img {
+  width: 150px !important; /* บังคับขนาดให้เล็ก */
+  height: 150px;
+  border-radius: 50%; /* ทำเป็นรูปวงกลม (ถ้าต้องการ) */
+  object-fit: cover;
+}
+
+/* จัดการ Layout ของเซกชัน Story */
+#story.split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px; 
+}
+
+/* บล็อกข้อความฝั่งซ้าย */
+#story .text {
+  flex: 1;
+}
+
+/* บล็อกรูปฝั่งขวา (ปรับให้ใหญ่ขึ้นจากเดิม) */
+#story .image {
+  flex: 0 0 500px; /* เพิ่มขนาดความกว้างเป็น 500px เพื่อให้ภาพดูชัดเจนขึ้น */
+  max-width: 100%;
+}
+
+/* ตารางรูปภาพ 2x2 */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px; /* ระยะห่างระหว่างรูป */
+}
+
+.story-grid img {
+  width: 100%;
+  height: 180px; /* ปรับความสูงต่อรูปให้สมดุลกับความกว้างใหม่ */
+  object-fit: cover;
+  border-radius: 20px; /* ขอบมนสวยงาม */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  display: block;
+  transition: all 0.3s ease; /* เตรียมไว้สำหรับการเด้ง */
+  cursor: pointer;
+}
+
+/* เอฟเฟกต์ชี้แล้วเด้งนิดๆ (Hover Effect) */
+.story-grid img:hover {
+  transform: translateY(-10px) scale(1.05); /* เด้งขึ้นบนและขยายขนาดนิดหน่อย */
+  box-shadow: 0 15px 35px rgba(255,122,0,0.3); /* เพิ่มเงาสีส้มจางๆ ให้ดูเด่น */
+}
+
+/* สำหรับมือถือ ให้แสดงเรียงเป็นแนวตั้ง */
+@media (max-width: 768px) {
+  #story.split {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+  #story .image {
+    flex: 0 0 auto;
+    width: 100%;
+
+  }
+}

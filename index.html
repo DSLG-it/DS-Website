@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DS International Logistics</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ===== Side Nav ===== -->
+<div class="side-nav">
+  <a href="#home" class="dot active"></a>
+  <a href="#about" class="dot"></a>
+  <a href="#services" class="dot"></a>
+  <a href="#why" class="dot"></a>
+  <!-- <a href="#process" class="dot"></a>
+  <a href="#story" class="dot"></a> -->
+  <a href="#contact" class="dot"></a>
+</div>
+
+<!-- ===== Navbar ===== -->
+<nav>
+  <div class="logo-group">
+    <h2>DS International Logistics</h2>
+    <h4>บริษัท ดี เอส อินเตอร์เนชั่นแนล โลจิสติกส์ จำกัด</h4>
+  </div>
+  <!-- <div class="menu-toggle" onclick="toggleMenu(event)">
+    ☰
+  </div> -->
+
+  <ul class="nav-links">
+    <li><a href="#home" onclick="closeMenu(); event.stopPropagation();">หน้าแรก</a></li>
+    <li><a href="#about" onclick="closeMenu(); event.stopPropagation();">เกี่ยวกับ</a></li>
+    <li><a href="#services" onclick="closeMenu(); event.stopPropagation();">บริการ</a></li>
+    <li><a href="#contact" onclick="closeMenu(); event.stopPropagation();">ติดต่อ</a></li>
+  </ul>
+</nav>
+
+<!-- overlay (คลิกแล้วปิด) -->
+<!-- <div class="overlay" onclick="closeMenu()"></div> -->
+
+<!-- ===== Hero ===== -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h1>บริการด้านการขนส่งสินค้าเกษตร</h1>
+    <h1>พืชผักผลไม้นานาชาติ</h1>
+    <p>ขนส่งสินค้านำเข้า-ส่งออกระหว่างประเทศ</p>
+    <p>พร้อมให้บริการแล้ววันนี้</p>
+    <button onclick="scrollToContact()">ติดต่อเรา</button>
+  </div>
+</section>
+
+<!-- ===== About ===== -->
+<section id="about" class="split">
+  <div class="text">
+    <h2>เกี่ยวกับเรา</h2>
+    <p>
+      บริษัท ดี เอส อินเตอร์เนชั่นแนล โลจิสติกส์ จำกัด 
+    </p><br>
+    <p>บริการด้านการขนส่งสินค้าเกษตรพืชผักผลไม้นานาชาติ</p>
+    <p>ขนส่งสินค้านำเข้า-ส่งออกระหว่างประเทศ</p>
+    <p>พร้อมให้บริการแล้ววันนี้</p>
+  </div>
+
+  <div class="image">
+    <div class="slider">
+      <div class="slides">
+
+        <img src="images/ss09.jpg" class="slide">
+        <img src="images/f09.jpg" class="slide">
+        <img src="images/ss13.jpg" class="slide">
+        <img src="images/ss11.jpg" class="slide">
+        <img src="images/f10.jpg" class="slide">
+        <img src="images/f02.JPG" class="slide">
+
+      </div>
+
+      <!-- dots -->
+      <div class="dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+        <span class="dot" onclick="goToSlide(3)"></span>
+        <span class="dot" onclick="goToSlide(4)"></span>
+        <span class="dot" onclick="goToSlide(5)"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Services ===== -->
+<section id="services">
+  <h2>บริการของเรา</h2>
+  <div class="cards">
+    <div class="card">
+      <!-- <img src="images/ss04.png"> -->
+      <p>❄️ ควบคุมอุณหภูมิคงที่ตลอดเส้นทาง สินค้าสดใหม่เหมือนเพิ่งเก็บจากสวน</p>
+    </div>
+    <div class="card">
+      <!-- <img src="images/ss03.jpg"> -->
+      <p>🚛 ทีมงานเชี่ยวชาญเส้นทางข้ามพรมแดน มั่นใจเรื่องเวลา</p>
+    </div>
+    <div class="card">
+      <!-- <img src="images/f03.JPG"> -->
+      <p>🍎 ดูแลใกล้ชิดทุกขั้นตอน ตั้งแต่ต้นทางจนถึงมือผู้รับที่จีน</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Why Choose Us ===== -->
+<section id="why">
+  <h2>ทำไมต้องเลือกเรา</h2>
+  <div class="cards">
+    <div class="card">✅ สินค้าสดใหม่ 100% ด้วยระบบ Cold Chain</div>
+    <div class="card">⏱ ตรงเวลา ด้วยทีมงานเชี่ยวชาญ</div>
+    <div class="card">🔍 ดูแลทุกขั้นตอน ตั้งแต่ต้นทางถึงปลายทาง</div>
+  </div>
+</section>
+
+<!-- ===== Story ===== -->
+<section id="story" class="split"> <div class="text">
+    <h2>จากสวนไทย... สู่โต๊ะอาหารในจีน</h2>
+    <p>
+      เราเชื่อว่าสินค้าที่ปลูกด้วยความตั้งใจ 
+      ควรถูกส่งต่อด้วยความใส่ใจในทุกขั้นตอน
+    </p>
+  </div>
+
+  <div class="image">
+    <div class="story-grid">
+      <img src="images/f15.jpg" alt="รูปที่ 1">
+      <img src="images/f14.jpg" alt="รูปที่ 2">
+      <img src="images/f13.jpg" alt="รูปที่ 3">
+      <img src="images/f12.jpg" alt="รูปที่ 4">
+    </div>
+  </div>
+</section>
+
+<!-- ===== Map ===== -->
+<section id="map-section">
+  <h2>ที่ตั้งของเรา</h2>
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3868.9357486425542!2d100.6364873!3d14.139875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311d8100064424fd%3A0x85c5b954e64c99fc!2z4Lia4Lij4Li04Lip4Lix4LiXIOC4lOC4tSDguYDguK3guKog4Lit4Li04LiZ4LmA4LiV4Lit4Lij4LmM4LmA4LiZ4LiK4Lix4LmI4LiZ4LmB4LiZ4LilIOC5guC4peC4iOC4tOC4quC4leC4tOC4geC4quC5jCDguIjguLPguIHguLHguJQgLyDkuJzlnKPpm4blm6IgLyBEIFMgSW50ZXJuYXRpb25hbCBMb2dpc3RpY3MgQ28uLEx0ZC4!5e0!3m2!1sth!2sth!4v1776478859170!5m2!1sth!2sth"
+      width="100%" 
+      height="450" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<!-- ===== Contact ===== -->
+<section id="contact">
+  <div class="text">
+    <h2>ติดต่อเรา</h2>
+    <p>Email: CROWNDS00001@gmail.com</p>
+    <p>Tel: 092-979-2665</p>
+    <p>ที่อยู่: 88/888 หมู่ 15 ต.คลองสอง อ.คลองหลวง จ.ปทุมธานี 12120</p>
+  </div>
+
+  <div class="contact-qr-group">
+      <img src="images/DS_ct1.png" alt="WeChat and Line QR Codes" class="contact-qr-img">
+  </div>
+</section>
+
+<!-- ===== Footer ===== -->
+<footer>
+  <p>© 2026 DS International Logistics Co., Ltd.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
