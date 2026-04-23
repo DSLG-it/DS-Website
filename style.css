@@ -127,7 +127,7 @@ nav a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   color: white;
 }
 
@@ -176,7 +176,7 @@ nav a:hover {
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.2);
 }
 
 /* content อยู่ด้านบน */
@@ -188,7 +188,7 @@ nav a:hover {
 .hero-content h1 {
   font-size: 52px;
   margin-bottom: 15px;
-  color: #ff7a00;
+  color: #fff;
 }
 
 .hero-content p {
