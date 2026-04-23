@@ -126,7 +126,8 @@ nav a:hover {
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 140px;
   text-align: left;
   color: white;
 }
@@ -693,4 +694,27 @@ p {
     width: 100%;
 
   }
+}
+
+/* highlight block */
+.service-highlight {
+  margin: 30px auto 10px;
+  text-align: center;
+  max-width: 600px;
+}
+
+/* แต่ละบรรทัด */
+.service-highlight p {
+  font-size: 20px;
+  margin: 8px 0;
+  color: #444;
+  letter-spacing: 0.5px;
+}
+
+/* บรรทัดสุดท้าย (เน้นแบรนด์) */
+.service-highlight .brand {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #ff7a00;
+  font-size: 22px;
 }
