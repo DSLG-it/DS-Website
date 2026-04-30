@@ -5,11 +5,27 @@
   box-sizing: border-box;
 }
 
+:root {
+
+  /* ===== Main Colors ===== */
+  --green-dark: #1F4D3A;
+  --green-main: #2E6B52;
+  --green-light: #EAF5EF;
+
+  --orange-main: #E67E22;
+  --orange-light: #F6B26B;
+
+  --cream: #FFFDF8;
+
+  --text-dark: #1f2937;
+
+}
+
 /* ===== Body ===== */
 body {
   font-family: 'Prompt', sans-serif;
-  background: #fff;
-  color: #222;
+  background: var(--cream);
+  color: var(--text-dark);
 }
 
 h1, h2, h3 {
@@ -58,14 +74,15 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 18px 50px;
-  background: #ff7a00; /* ดำตัดส้ม */
+  background: rgba(31, 77, 58, 0.95);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 nav h2 {
-  color: #8B4500;
+  color: #fff;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -84,7 +101,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #8B4500;
+  color: #F6B26B;
 }
 
 .logo-group {
@@ -104,13 +121,13 @@ nav a:hover {
 .logo-group h2 {
   margin: 0;
   font-size: 22px;
-  color: #8B4500;
+  color: #fff;
 }
 
 .logo-group h4 {
   margin: 0;
   font-size: 14px;
-  color: #8B4500;
+  color: #fff;
 }
 
 .logo-text {
@@ -200,19 +217,27 @@ nav a:hover {
 /* ===== Button ===== */
 button {
   background: linear-gradient(45deg, #ff7a00, #ffb347);
+
   border: none;
   padding: 14px 35px;
+
   color: white;
-  border-radius: 30px;
+  border-radius: 40px;
+
   font-size: 16px;
+  font-weight: 500;
+
   cursor: pointer;
-  box-shadow: 0 5px 20px rgba(255,122,0,0.4);
-  transition: 0.3s;
+
+  box-shadow: 0 8px 25px rgba(255,122,0,0.35);
+
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255,122,0,0.6);
+  transform: translateY(-4px);
+
+  box-shadow: 0 12px 30px rgba(255,122,0,0.45);
 }
 
 /* ===== Section ===== */
@@ -224,12 +249,12 @@ section {
 section h2 {
   font-size: 36px;
   margin-bottom: 20px;
-  color: #ff7a00;
+  color: var(--green-dark);
 }
 
 /* ===== About ===== */
 #about {
-  background: #fff7f0; /* ส้มอ่อน */
+  background: var(--green-light);
 }
 
 /* ===== Cards ===== */
@@ -246,14 +271,14 @@ section h2 {
   padding: 35px;
   width: 260px;
   border-radius: 15px;
-  border-top: 5px solid #ff7a00;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border-top: 5px solid var(--green-main);
+  box-shadow: 0 10px 30px rgba(31,77,58,0.08);
   transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(255,122,0,0.3);
+  box-shadow: 0 15px 35px rgba(31,77,58,0.18);
 }
 
 /* ===== Process ===== */
@@ -277,7 +302,13 @@ section h2 {
 
 /* ===== Contact (Desktop: ซ้าย-ขวา / Mobile: บน-ล่าง) ===== */
 #contact {
-  background: #FFD79F;
+  background: linear-gradient(
+    135deg,
+    #1F4D3A,
+    #2E6B52
+  );
+
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -304,6 +335,11 @@ section h2 {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   border: 2px solid #ff7a00;
+}
+
+#contact h2,
+#contact p {
+  color: white;
 }
 
 /* ===== Story (Grid 2x2 Hover Effect) ===== */
@@ -376,8 +412,8 @@ section h2 {
 
 /* ===== Footer ===== */
 footer {
-  background: #ff7a00;
-  color: #8B4500;
+  background: #163829;
+  color: rgba(255,255,255,0.8);
   padding: 20px;
   text-align: center;
 }
@@ -392,6 +428,14 @@ footer {
   nav ul {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .hero {
+    padding-left: 20px;
+    padding-right: 20px;
+
+    justify-content: center;
+    text-align: center;
   }
 
   .hero-content h1 {
@@ -453,7 +497,7 @@ section {
 section h2 {
   font-size: 36px;
   margin-bottom: 20px;
-  color: #ff7a00;
+  color: var(--green-dark);
 }
 
 /* ===== Text spacing ===== */
@@ -721,7 +765,7 @@ p {
 
 /* ===== Activities ===== */
 #activities {
-  background: #fff7f0;
+  background: #F8FCF9;
 }
 
 /* subtitle */
@@ -758,7 +802,7 @@ p {
 .activities-grid img:hover {
   transform: translateY(-10px) scale(1.03);
 
-  box-shadow: 0 15px 35px rgba(255,122,0,0.25);
+  box-shadow: 0 18px 40px rgba(31,77,58,0.22);
 }
 
 /* ===== Mobile ===== */
@@ -776,5 +820,22 @@ p {
   .activities-subtitle {
     font-size: 16px;
     margin-bottom: 35px;
+  }
+
+  nav {
+    padding: 15px 20px;
+  }
+
+  .logo-group {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-group h2 {
+    font-size: 18px;
+  }
+
+  .logo-group h4 {
+    font-size: 12px;
   }
 }
